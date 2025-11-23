@@ -1,0 +1,382 @@
+.form-section
+{
+    margin-bottom: 0px;
+    padding: 0px 30px;
+    &__wrapper
+    {
+        @include flex-row;
+        justify-content: center;
+        margin-top: -114px;
+    }
+    &__booking-form
+    {
+        width: 100%;
+        background-color: $light-color;
+        box-shadow: 0px 30px 84px 0 rgb(19,10, 46, 8%), 0px 8px 32px 0 rgb(19,10, 46, 7%),
+        0px 3px 14px 0 rgb(19,10, 46, 3%), 0px 1px 3px 0 rgb(19,10, 46, 13%);
+        border-radius: 12px;
+        margin-bottom: 83px;
+    }
+    .booking-form{
+        position: relative;
+        @include flex-col;
+        padding: 30px 22px 32px 22px;
+        &__options{
+            color: $dark-text-color;
+            @include flex-row;
+            padding-left: 5px;
+            padding-top: 4px;
+            margin-bottom: 24px;
+            column-gap: 9px;
+            .booking-form__option
+            {
+                
+                text-overflow: ellipsis;
+                border: none;
+                background: transparent;
+                outline: none;
+                padding: 0;
+                margin: 0;
+                font: inherit;
+                color: inherit;
+                cursor: pointer;
+                @include flex-row;
+                align-items: center;
+                background-color: #ffffff00;
+                border: none;
+                @include Poppins-font(600, 14px);
+                &:nth-of-type(1)
+                {
+                    max-width: 101px;
+                    width: 100%;
+                }
+                 &:nth-of-type(2)
+                {
+                    max-width: 102px;
+                    width: 100%;
+                }
+                 &:nth-of-type(3)
+                {
+                    max-width: 73px;
+                    width: 100%;
+                }
+                &:hover, &:focus{
+                    cursor: pointer;
+                    color: $accent-color;
+                    border: none;
+                    outline: none;
+                    path
+                    {
+                        stroke: $accent-color;
+                        fill:  $accent-color;
+                    }
+                }
+                 &:active{
+                    position: relative;
+                    scale:0.95;
+                    cursor: pointer;
+                    color: darken($accent-color,5%);
+                    path
+                    {
+                        stroke: darken($accent-color,5%);
+                        fill: darken($accent-color,5%);
+                    }
+                }   
+                }
+            
+        }
+        &__element_effect_shadow{
+            &:hover{
+                box-shadow: 0px 30px 42px 0 rgb(19,10, 46, 8%), 0px 8px 16px 0 rgb(19,10, 46, 7%),
+                0px 3px 7px 0 rgb(19,10, 46, 3%), 0px 1px 3px 0 rgb(19,10, 46, 13%);
+            }
+        }
+        &__fields{
+            @include flex-row;
+            justify-content: space-between;
+            padding-left: 6px;
+            padding-right: 8px;
+                    .booking-form__from,.booking-form__to {
+                        @include flex-col;
+                        padding: 13px 27px 15px 20px;
+                        border-radius: 10px;
+                        max-width: 252px;
+                        border: 2px solid #AAAAAA;
+                        
+                        
+                    }
+                    .booking-form__to 
+                    {
+                        max-width: 252px; 
+                        width: 100%;
+                        padding: 13px 27px 15px 18px;
+                    }
+                    .booking-form__from 
+                    {
+                        max-width: 252px; 
+                        width: 100%;
+                    }
+                label
+                    {
+                        @include Poppins-font(500,14px);
+                        color: $dark-text-color;
+                        opacity: 80%;
+                        text-transform: uppercase;
+                    }   
+                    .booking-form__city-abbreviation{
+                        padding-top: 4px;
+                        @include Poppins-font(600, 24px);
+                        text-transform: uppercase;
+                        margin-bottom: 4px;
+                        cursor: pointer;
+                        max-width: max-content;
+                           
+                    }
+                    .booking-form__airport{
+                        cursor: pointer;
+                        appearance: none;
+                        background: transparent;
+                        border: none;
+                        @include Poppins-font(500,14px);
+                        color: $dark-text-color;
+                        opacity: 80%;
+                        text-transform: uppercase;
+                        word-spacing: 10%;
+                        &:focus{
+                            border: none;
+                            outline: none;
+                        }
+                            
+                    }
+                    .booking-form__swap-button
+                    {
+                        background-color: $light-color;
+                        border: 2px solid #AAAAAA;
+                        border-radius: 15px;
+                        @include flex-row;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        max-width: 30px;
+                        max-height: 30px;
+                        margin-top: 50px;
+                        &:hover{
+                            position: relative;
+                            scale: 1.2;
+                            background-color: $accent-color;
+                            border: 0px;
+                            path{
+                                stroke: $light-color;
+                            }
+                        }
+                        &:active{
+                            position: relative;
+                            scale: 1.1;
+                            background-color: darken($accent-color,5%);
+                            border: 0px;
+                            path{
+                                stroke: $light-color;
+                            }
+                        }
+                    }
+            .booking-form__calendar{
+                @include flex-row;
+                justify-content: space-between;
+                border-radius: 10px;
+                border: 2px solid #AAAAAA;
+                padding: 12px 18px 15px 18px;
+                margin-left: 24px;
+                max-width: 342px;
+                width: 100%;
+                &-departure, &-return{
+                    max-width: 156px;
+                    width: 100%;
+                    
+                }
+                &-span{
+                        @include Poppins-font(500,14px);
+                        color: $dark-text-color;
+                        opacity: 80%;
+                    }
+                &-date-block
+                {
+                    @include flex-row;
+                    align-items: center;
+                    justify-content: space-between;
+                    .booking-form__calendar-date
+                    {
+                        @include Poppins-font(600,24px);
+                        color: $dark-text-color;
+                        opacity: 1;
+                        padding: 5px 0;
+                        letter-spacing: -1px;
+                        word-spacing: -1px
+                    }
+                }
+                &-navigation
+                {
+                    @include flex-row;
+                    justify-content: space-between;
+                    max-width: 108px;
+                    &-btn{
+                        padding: 0;
+                        @include Poppins-font(500, 14px);
+                        background-color: #ffffff00;
+                        border: none;
+                        color: $dark-text-color;
+                        opacity: 80%; 
+                        &:hover{
+                            cursor: pointer;
+                            text-decoration:underline;
+                        }
+                    }
+                   
+                }
+            }
+        }
+        &__requirements
+        {
+            @include flex-row;
+            justify-content: start;
+            padding-top: 15px;
+            padding-left: 6px;
+           
+            span
+            {
+                
+                padding: 0;
+                @include Poppins-font(500, 14px);
+                color: $dark-text-color;
+                opacity: 80%; 
+                &:hover{
+                    cursor: pointer;
+                    text-decoration:underline;
+                }
+            }
+
+        }
+        &__book-btn
+        {
+            top: 225px;
+            position: absolute;
+            align-self: center;
+            cursor: pointer;
+            max-width: 233px;
+            width: 100%;
+            padding: 0;
+            span{
+                @include flex-row;
+                color: $light-color;
+                width: 100%;
+                justify-content: space-between;
+                padding: 27px 28px 26px 30px;
+                align-items: center;
+            } 
+            &:hover{
+                background-color: $light-color;
+                
+                outline: 2px $accent-color solid;
+                path{
+                    stroke: $accent-color;
+                }
+                span{
+                    color: $accent-color;
+                }
+            }
+            &:active{
+                outline: 2px $accent-color solid;
+                scale: 0.95;
+                background-color: $light-color;
+                color: darken($accent-color, 10%);
+                path{
+                    stroke:darken($accent-color, 10%);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1169px) {
+    .booking-form{
+        max-width: 70%;
+    }
+    .booking-form__fields {
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+    }
+    .form-section .booking-form__fields .booking-form__calendar
+    {
+        width: 100%; 
+        max-width: none;
+        margin-left: 0; 
+        flex-direction: row; 
+        justify-content: center;
+        margin-top: 16px;
+        gap: 30%;
+    }
+    .booking-form__calendar-departure,
+    .booking-form__calendar-return {
+        max-width: 48%; 
+        width: 48%;
+    }
+    .form-section .booking-form__book-btn{
+        top: 350px
+    }
+}
+@media (max-width: 1024px) {
+    .form-section__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-section .booking-form__fields .booking-form__swap-button {
+        display: none;
+    }
+    .form-section .booking-form__fields .booking-form__calendar-span {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 968px){
+    .form-section .booking-form__fields .booking-form__from, 
+    .form-section .booking-form__fields .booking-form__to{
+        max-width: none;
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+    }
+    .form-section .booking-form__fields  {
+        @include flex-col;
+        row-gap: 10px;
+    }
+    .form-section .booking-form__fields .booking-form__calendar{
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+        margin: 0;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .form-section .booking-form__book-btn{
+        top: 460px;
+        scale: 0.85
+    }
+}
+
+@media (max-width: 576px) {
+   .form-section .booking-form__fields .booking-form__calendar{
+        flex-direction: column;
+        gap:    30px
+    }
+    .form-section .booking-form__book-btn{
+        top: 610px;
+        scale: 0.7
+    }
+    .form-section .booking-form__options{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .form-section .booking-form__fields .booking-form__calendar .booking-form__calendar-date{
+       font-size: 20px;
+    }
+    .form-section .booking-form__fields .booking-form__city-abbreviation
+    {
+        font-size: 20px;
+    }
+}

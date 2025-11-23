@@ -1,0 +1,247 @@
+.header{
+    padding: 0px 30px;
+    .logo-link{
+        line-height: 0;
+        height: 37px;
+    }
+    position: relative;
+    &__nav-burger {
+        transform: translateY(10px);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 10;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $dark-text-color;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+        transform-origin: center; 
+    }
+
+
+}
+
+    &__wrapper{
+        @include flex-row;
+        margin-left: 5px;
+        margin-right: -5px;
+        justify-content: space-between;
+        padding:20px 0px 0px 0px ;
+    }
+
+    &__nav{
+        position: relative;
+        &-menu{
+            @include flex-row;
+
+            flex-grow: 1;
+            max-width: 555px;
+            width: 100%;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0  10px 0px 63px;
+          
+            padding: 0;
+            
+        }
+        &-item, &-link{
+            display: flex;
+            justify-content: center;
+            @include Poppins-font(500, 14px);
+            transition: 0.3 ease;
+            &:hover{
+                animation: floatText 1s ease-in-out infinite;
+                color: $accent-color;
+            }
+            &:active{
+                scale: 0.95;
+                color: darken($accent-color, 10%);
+            }
+            padding: 0;
+            &:nth-of-type(7)
+            {
+                display: none;
+            }
+        }
+        &-account{
+            padding: 2px 0px;
+            @include flex-row;
+            position: relative;
+            justify-content: space-between;
+            max-width: 172px;
+            width: 100%;
+            
+        }
+        &-register{
+            position: relative;
+        }
+        &-button{
+            @include flex-row;
+            padding: 6px 23px;
+            &-sign-in, &-sign-in:hover{
+                color: $light-color
+            }
+            &:hover{
+                position: absolute;
+                right: 0;
+                z-index: 1;
+                max-width: 171px;
+                width: 100%;
+                padding-left: 28px;
+                
+                .header__nav-button-icons{
+                    z-index: 2;
+                    opacity: 1;
+                    width: 40%;
+                    height: 100%;
+                    background-color: darken($accent-color, 10%);
+                }
+                .header__nav-register{
+                    position: absolute;
+                    opacity: 0;
+                }
+                .header__nav-button-auth{
+                    opacity: 1;
+                    right: 0px;
+                }
+                .header__nav-button-google, .header__nav-button-apple{
+                    display: block;
+                }
+                
+            }
+            &:active{
+                background-color: darken($accent-color, 5%);
+                color: darken($light-color, 5%);
+            }
+            &-icons{
+                @include flex-row;
+                justify-content: space-around;
+                border-radius: 5px;
+                transition: ease 0.3s;
+                opacity: 0;
+                position: absolute;
+
+                width: 0%;
+                right: 0;
+                top: 0;
+            }
+            &-auth{
+                opacity: 0;
+                right:-100px;
+                .header__nav-button-google{
+                    width: 20px;
+                    height: 20px;
+                    display: none;
+                    &:hover{
+                        display: block;
+                    }
+                    &:active{
+                        filter: brightness(0.8);
+                    }
+                }
+                .header__nav-button-apple{
+                    width: 22px;
+                    height: 22px;
+                    display: none;
+                     &:hover{
+                        display: block;
+                    }
+                    &:active{
+                        filter: brightness(0.8);
+                    }
+                }
+            } 
+        }
+    }
+        
+    
+}
+
+@media (max-width: 1024px) {
+    .header__wrapper {
+        justify-content: space-between;
+    }
+    .header__nav-menu {
+        max-width: 100%;
+        justify-content: space-around;
+        margin:   0 15px 0 15px;
+    }
+    .header__nav-account {
+        gap: 5px;
+    }
+}
+
+
+    @media (max-width: 968px) {
+        .header__nav-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            background-color: $light-color;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.15);
+            z-index: 1000;
+            width: calc(100% - 70px);
+            align-self: center;
+            a {
+                text-align: center;
+            }
+           
+        }
+
+        .header__nav-menu.active {
+            display: flex;
+        }
+
+        .header__nav-burger {
+            display: flex;
+        }
+       .header__nav-button-icons
+       {
+        display: none;
+       }
+        .header button:hover{
+                position:relative;
+
+                max-width: unset;
+                width: unset;
+                padding: 6px 23px;
+        }
+    }
+
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0 10px;
+        .logo-link img {
+        width: 100px;
+    }
+    }
+    .header__nav-menu {
+        gap: 10px;
+    }
+    .header__nav-link {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+    .header__nav-account {
+        display: none;
+    }
+     .header__nav-link:nth-of-type(7)
+        {
+            display: block;
+        }
+}

@@ -1,0 +1,100 @@
+.charters
+{
+    background-image: url(../images/pictures/CHARTERS_BG.png);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    &__wrapper
+    {
+        @include flex-col;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 58px;
+    }
+    &__heading-block
+    {
+        width: 100%;
+        @include flex-row;
+        justify-content: center;
+        background-image: url(../images/icons/Ellipse.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 13px;
+        
+    }
+    &__cards-block
+    {
+
+        padding: 30px 0 0 0 ;
+        margin: 0;
+        width: 100%;
+        list-style-type: none;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        column-gap: 30px;
+
+    }
+    &__card
+    {   
+        padding: 10px 12px 14px 12px;
+        @include flex-col;
+        max-width:231px;
+        align-items: center;
+        box-shadow: 0px 30px 84px rgba(19, 10, 46, 0.08), 
+                    0px 8px 32px rgba(19, 10, 46, 0.07), 
+                    0px 3px 14px rgba(19, 10, 46, 0.03), 
+                    0px 1px 3px rgba(19, 10, 46, 0.13);
+        border-radius: 12px;
+        &-plane-model
+        {
+            padding-top:15px ;
+            margin: 0;
+            @include Poppins-font(500,16px);
+        }
+        background-color: $light-color;
+        &:hover{
+            position: relative;
+            bottom: 15px;
+        }
+    }
+}
+@media (max-width: 1199px) {
+        .charters__cards-block {
+            max-width: max-content;
+            grid-template-columns: repeat(2, max-content);
+            column-gap: 40px;
+            row-gap: 40px;
+        }
+         .charters__card {
+            align-self: center;
+        }
+    }
+@media (max-width: 1024px) {
+        .charters__cards-block
+    {
+        padding-top: 7px;
+    }
+    }
+
+    @media (max-width: 992px) {
+        .charters__cards-block {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        .charters__cards-block {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+
+        .charters__card {
+            max-width: 420px;
+            margin: 0 auto;
+            &:hover{
+                bottom: 0;
+            }
+        }
+    }

@@ -1,0 +1,140 @@
+.spec-section
+{
+    padding: 0px 30px;
+    margin-bottom: 44px;
+    &__wrapper
+    {
+        @include flex-col;
+        align-items: center;
+        justify-content: center;
+    }
+    &__heading-block
+    {
+        width: 100%;
+        @include flex-row;
+        justify-content: center;
+        background-image: url(../images/icons/Ellipse.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 66px;
+    }
+    &__main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 268px);
+        row-gap: 30px;
+        width: 100%;
+    }
+    &__card
+    {  
+        transition:  ease-out 0.3s;
+        filter: brightness(1) saturate(0.5) opacity(0.1); 
+        @include flex-col;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 52px 50px 52px;
+        background-color: $light-color;
+        border-radius: 12px;
+        box-shadow: 0px 30px 84px rgba(19, 10, 46, 0), 
+                    0px 8px 32px rgba(19, 10, 46, 0), 
+                    0px 3px 14px rgba(19, 10, 46, 0), 
+                    0px 1px 3px rgba(19, 10, 46, 0);
+        &-heading
+        {
+            text-align: center;
+            margin: 0;
+            padding-top: 8px;
+        }
+        &:hover{
+            transition:  ease-out 0.3s; 
+            filter: brightness(1) saturate(1) opacity(1);
+            box-shadow: 0px 30px 84px rgba(19, 10, 46, 0.08), 
+                    0px 8px 32px rgba(19, 10, 46, 0.07), 
+                    0px 3px 14px rgba(19, 10, 46, 0.03), 
+                    0px 1px 3px rgba(19, 10, 46, 0.13);
+
+        }
+
+    }
+    &__airplane-wrapper
+    {
+        z-index: -1;
+        @include flex-col;
+        align-items: center;
+        justify-content: center;
+        grid-row: span 2;
+        img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+            transform-origin: center center;
+        }
+    }
+    &__heading
+    {
+        padding-top: 4px;
+        margin: 0;
+    }
+    &__info-text
+    {
+        padding-top: 3px;
+        margin: 0;
+        @include Poppins-font(400, 16px);
+        letter-spacing: 0.02em;
+        color: $dark-text-color;
+        text-align: center;
+        opacity: 60%;
+    }
+}
+@media (max-width: 1024px) {
+    .spec-section__main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 40px;
+    }
+    .spec-section__card {
+        filter: none;
+         box-shadow: 0px 30px 84px rgba(19, 10, 46, 0.08), 
+                    0px 8px 32px rgba(19, 10, 46, 0.07), 
+                    0px 3px 14px rgba(19, 10, 46, 0.03), 
+                    0px 1px 3px rgba(19, 10, 46, 0.13);
+
+       
+    }
+    .spec-section__airplane-wrapper {
+        display: none;
+    }
+}
+   @media (max-width: 992px) {
+   .spec-section__main {
+        gap: 20px;
+    }
+    .spec-section__card {
+        padding: 30px 32px 36px 32px;
+        width: 80%;
+       
+    }
+    .spec-section__heading-block
+    {
+        margin: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .spec-section__main {
+        max-width: fit-content;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        .spec-section__info-text{
+        font-size: 14px;
+        }
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .spec-section {
+        padding: 0 15px;
+    }
+    
+    
+}

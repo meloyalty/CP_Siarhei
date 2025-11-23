@@ -1,0 +1,90 @@
+.book-flights{
+    padding: 0px 30px;
+    &__wrapper
+    {
+        justify-content: space-between;
+        align-items: center;
+        padding: 94px 0px 149px 0px;
+        gap: 20px
+    }
+    &__text-block{
+
+        @include flex-col;            
+        max-width: 587px;
+        row-gap: 48px;
+        padding-bottom: 10px;
+    }
+    &__text{
+        @include Roboto-font(400, 66px);
+        line-height:1.17;
+        span{
+            @include Roboto-font(700, 66px);
+            text-transform: uppercase;
+            
+            color: $accent-color;
+        }
+    }
+    &__explore{
+        @include Poppins-font(500,16px);
+        a{
+            @include flex-row;
+            justify-content: space-between;
+            max-width: 121px; 
+            &:hover{
+                animation: letterMove 1s ease-in-out infinite;
+                color: $accent-color;
+            &:hover svg{
+                        animation: sideShake 1s ease-in-out infinite;
+                        path{
+                            stroke: $accent-color;
+
+                        }
+                        
+                    }
+                    &:active{
+                    scale: 0.95;
+                    color: darken($accent-color, 10%);
+                    }
+                    &:active svg{
+                    scale: 0.95;
+                    stroke: darken($accent-color, 10%);
+                }
+            }
+            
+        }
+       
+      
+    }
+    &__illuminator{
+        margin-right: -10px;
+        width: 360px;
+        height: 451px;
+        box-shadow: inset 0px -4px 5px rgba(0, 0, 0, 0.25), inset 0 0 0 15px #FFFFFF;
+        border-radius: 120px;
+        backdrop-filter: saturate(2.5) brightness(0.70) contrast(200%) hue-rotate(20deg);
+    }
+}
+@media (max-width: 1024px) {
+    .book-flights__illuminator {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .book-flights__text{
+        font-size: 54px;
+        span{
+           font-size: 54px; 
+        }
+    }
+    .book-flights__explore{
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px){
+    .book-flights__text{
+        font-size: 40px;
+        span{
+           font-size: 40px; 
+        }
+    }
+}

@@ -1,0 +1,184 @@
+.membership
+{
+    padding: 0px 30px;
+    margin-bottom: 200px;
+    &__wrapper
+    {
+        @include flex-col;
+        align-items: center;
+        justify-content: center;
+    }
+    &__heading-block
+    {
+        width: 100%;
+        @include flex-row;
+        justify-content: center;
+        background-image: url(../images/icons/Ellipse.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 88px;
+        h1
+        {
+            margin: 0;
+            padding-top: 8px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+    &__cards-block
+    {
+        padding: 0;
+        @include flex-row;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .membership__card
+        {
+            max-width: 400px;
+            position: relative;
+            transition: 0.3s;
+            h2
+            {
+                margin: 0;
+                margin-bottom: 28px;
+            }
+            @include flex-col;
+            align-items: start;
+            background-color: #F5F5F5;
+            padding: 20px 24px 24px 24px;
+            border-radius: 20px;
+
+            &-what
+            {
+                @include Poppins-font(400, 22px);
+                color: #A9A9AA;
+                margin-bottom: 24px;
+            }
+            &-divider
+            {
+                margin-bottom: 55px;
+                align-self: center;
+            }
+            &:hover{
+                transition: 0.3s;
+                max-width: 336px;
+                background-color: $accent-color;
+                color: $light-color;
+                bottom: 40px;
+                .membership__advantages-item{
+                    color: $light-color;
+                }
+                path{
+                    fill: $light-color;
+                }
+                button{
+                    align-self: center;
+                    cursor: pointer;
+                    max-width: 336px;
+                    background-color: $light-color;
+                    align-self: center;
+                    span{
+                        color: $dark-text-color;
+                    }
+                    &:hover{
+                        box-shadow: 0px 12px 32px rgba(255, 255, 255, 0.4);
+                    }
+                    &:active{
+                        box-shadow: 0px 12px 32px rgba(255, 255, 255, 0.0);
+                        scale:0.95;
+                    }
+                }
+            }
+            .membership__price
+            {
+                @include Poppins-font(600,32px);
+                span
+                {
+                    @include Poppins-font(400, 18px);
+                }
+                margin-bottom: 22px;
+            }
+        }
+    }
+    &__advantages
+    {
+        @include flex-col;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        list-style: none;
+        row-gap: 16px;
+        li
+        {
+            column-gap: 8px;
+            @include flex-row;
+            align-items: center;
+            @include Poppins-font(500, 16px);
+            color: $dark-text-color;
+        }
+        margin-bottom: 4px;
+    }
+    &__btn
+    {
+        @include flex-row;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 0;
+        line-height: 40px;
+        a{
+            color: $light-color;
+        }
+    }
+    
+}
+@media (max-width: 1269px) {
+    .membership__cards-block {
+        
+        align-self: center;
+        justify-content: center;
+        column-gap: 24px;  
+        row-gap: 48px;     
+        .membership__card:hover{
+            bottom: 0px;
+        } 
+    }
+   
+}
+@media (max-width: 1024px) {
+    
+    .membership__cards-block {
+        padding: 0;
+    }
+    .membership__heading-block
+    {
+        margin: 20px;
+    }
+    .membership__wrapper {
+        margin-bottom: 0px;
+    }
+    .membership {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 576px) {
+    .membership{
+        padding: 0 10px;
+        margin-bottom: 40px;
+    }
+    .membership__cards-block {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 32px;
+        padding: 0;
+        .membership__card {
+            width: 90%;
+            max-width: 360px;
+            padding: 15px;
+            scale: 0.9;
+        }
+    }
+    
+    .membership__card-divider{
+        display: none;
+    }
+}

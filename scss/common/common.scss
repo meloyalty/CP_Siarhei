@@ -1,0 +1,74 @@
+body{ 
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-x:hidden;
+}
+html{
+    width: 100%;
+    overflow-x:hidden;
+}
+.header-book-flights-bg{
+    background:linear-gradient(rgba(234, 247, 246, 0.8),rgba(234, 247, 246, 0.8)), url(../images/./pictures/H_BF_BG.png) ;
+    background-size: cover;
+    padding: 0px 30px;
+  
+}
+a{
+    display: flex;
+    align-items: center;
+}
+a:hover, a:checked, a{
+    color: $dark-text-color;
+    text-decoration: none;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1110px;
+    width:100%
+}
+.container_size_special
+{
+    max-width: 1232px;
+}
+.wrapper {
+    display: flex;
+}
+.heading
+{
+    text-align: center;
+    letter-spacing: 10%;
+    &_size_1{
+       @include Poppins-font(700, 36px);
+       letter-spacing: 10;
+       @media (max-width: 768px)
+       {
+        font-size: 28px;
+       }
+    }
+    &_size_2{
+       @include Poppins-font(700, 32px);
+       @media (max-width: 768px)
+       {
+        font-size: 24px;
+       }
+    }
+    &_size_3{
+       @include Poppins-font(600, 24px);
+       @media (max-width: 768px)
+       {
+        font-size: 20px;
+       }
+    }
+     &_size_4{
+       @include Poppins-font(500, 18px);
+       @media (max-width: 768px)
+       {
+        font-size: 14px;
+       }
+    }
+}

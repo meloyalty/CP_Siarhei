@@ -1,0 +1,10 @@
+.info-section {
+  position: relative;
+}
+.info-section__bg-block {
+  position: absolute;
+  width: calc((100vw - 1110px) / 2 + 232px);
+  background-color: #E5F4F6;
+  height: 400px;
+  z-index: -1;
+}/*# sourceMappingURL=information.css.map */

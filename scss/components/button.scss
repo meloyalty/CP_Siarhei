@@ -1,0 +1,25 @@
+.button{
+    @include flex-row;
+    background-color: $accent-color;
+    color: $light-color;
+    border: none;
+    &_size_1{
+        border-radius: 5px;
+        @include Poppins-font(500, 14px);
+    }
+    &_size_2{
+        border-radius: 10px;
+        @include Poppins-font(500, 18px);
+    }
+    &_size_3{
+        border-radius: 12px;
+        @include Poppins-font(600, 22px);
+    }
+
+    &_actions-type_1{
+        &:hover{
+            color: $light-color;
+        }
+        
+    }
+}

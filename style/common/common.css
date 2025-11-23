@@ -1,0 +1,27 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-book-flights-bg {
+  background-image: url(../images/./pictures/H_BF_BG.png);
+}
+
+a {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.wrapper {
+  display: flex;
+}/*# sourceMappingURL=common.css.map */
