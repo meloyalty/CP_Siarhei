@@ -16,6 +16,7 @@
     }
     &__error-404
     {
+        width: fit-content;
         @include flex-col;
         justify-content: center;
     }
@@ -76,5 +77,116 @@
         &:hover{
             color: darken($accent-color, 10% )
         }
+    }
+    @media (max-width: 1140px) {
+        .main{
+            &__error-block{
+                gap: 0px;
+            }
+            
+            &__error-404{
+                .main__error-code{
+                    @include Roboto-font(500, 140px);
+                    gap: 10px;
+                    &-airplane{
+                        width: 80px;
+                        height: 120px;
+                        border-radius: 30px;
+                        border: 12px solid $accent-color;
+                    }
+                }
+            }
+
+            &__error-info{
+                scale: 0.6;
+            }
+            &__oops{
+                font-size: 60px;
+            }
+        }
+        
+    }
+    @media (max-width: 768px) {
+        .main{
+            &__error-block{
+                gap: 0px;
+                justify-content: space-between;
+            }
+            
+            &__error-404{
+                .main__error-code{
+                    @include Roboto-font(500, 80px);
+                    gap: 6px;
+                    &-airplane{
+                        width: 40px;
+                        height: 60px;
+                        border-radius: 15px;
+                        border: 8px solid $accent-color;
+                    }
+                }
+            }
+
+            &__error-info{
+                a{
+                   font-size: 16px;
+                   img{
+                    width: 30px;
+                   }
+                }
+                &-text{
+                    font-size: 16px;
+                }
+            }
+            &__oops{
+                font-size: 40px;
+            }
+            .heading{
+                font-size: 20px;
+            }
+            
+        }
+        
+    }
+    @media (max-width: 425px) {
+        .main{
+            &__error-block{
+                gap: 0px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            &__error-404{
+                .main__error-code{
+                    @include Roboto-font(500, 80px);
+                    gap: 6px;
+                    &-airplane{
+                        width: 40px;
+                        height: 60px;
+                        border-radius: 15px;
+                        border: 8px solid $accent-color;
+                    }
+                }
+            }
+
+            &__error-info{
+                a{
+                   font-size: 16px;
+                   img{
+                    width: 30px;
+                   }
+                }
+                &-text{
+                    font-size: 16px;
+                }
+            }
+            &__oops{
+                font-size: 40px;
+            }
+            .heading{
+                font-size: 20px;
+            }
+            
+        }
+        
     }
 }

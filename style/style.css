@@ -849,9 +849,6 @@ a:hover, a:checked, a {
   .form-section .booking-form__book-btn {
     top: 460px;
     scale: 0.85;
-    .form-section .booking-form__book-btn:hover, .form-section .booking-form__book-btn:active,{
-      scale: 0.85;
-    }
   }
 }
 @media (max-width: 576px) {
@@ -860,11 +857,8 @@ a:hover, a:checked, a {
     gap: 30px;
   }
   .form-section .booking-form__book-btn {
-    top: 620px;
+    top: 610px;
     scale: 0.7;
-     .form-section .booking-form__book-btn:hover, .form-section .booking-form__book-btn:active,{
-      scale: 0.7;
-    }
   }
   .form-section .booking-form__options {
     flex-direction: column;
@@ -1518,6 +1512,8 @@ a:hover, a:checked, a {
   width: 100%;
 }
 .main__error-404 {
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1588,4 +1584,94 @@ a:hover, a:checked, a {
 }
 .main a:hover {
   color: rgb(79.9755102041, 77.6, 116.4);
+}
+@media (max-width: 1140px) {
+  .main .main__error-block {
+    gap: 0px;
+  }
+  .main .main__error-404 .main__error-code {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 140px;
+    gap: 10px;
+  }
+  .main .main__error-404 .main__error-code-airplane {
+    width: 80px;
+    height: 120px;
+    border-radius: 30px;
+    border: 12px solid #656293;
+  }
+  .main .main__error-info {
+    scale: 0.6;
+  }
+  .main .main__oops {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .main .main__error-block {
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .main .main__error-404 .main__error-code {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 80px;
+    gap: 6px;
+  }
+  .main .main__error-404 .main__error-code-airplane {
+    width: 40px;
+    height: 60px;
+    border-radius: 15px;
+    border: 8px solid #656293;
+  }
+  .main .main__error-info a {
+    font-size: 16px;
+  }
+  .main .main__error-info a img {
+    width: 30px;
+  }
+  .main .main__error-info-text {
+    font-size: 16px;
+  }
+  .main .main__oops {
+    font-size: 40px;
+  }
+  .main .main .heading {
+    font-size: 20px;
+  }
+}
+@media (max-width: 425px) {
+  .main .main__error-block {
+    gap: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main .main__error-404 .main__error-code {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 80px;
+    gap: 6px;
+  }
+  .main .main__error-404 .main__error-code-airplane {
+    width: 40px;
+    height: 60px;
+    border-radius: 15px;
+    border: 8px solid #656293;
+  }
+  .main .main__error-info a {
+    font-size: 16px;
+  }
+  .main .main__error-info a img {
+    width: 30px;
+  }
+  .main .main__error-info-text {
+    font-size: 16px;
+  }
+  .main .main__oops {
+    font-size: 40px;
+  }
+  .main .main .heading {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
